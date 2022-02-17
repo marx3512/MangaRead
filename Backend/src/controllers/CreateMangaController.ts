@@ -3,7 +3,9 @@ import { CreateMangaService } from "../services/CreateMangaService";
 
 export class CreateMangaController {
     async handle(request: Request, response: Response) {
-        const { name, image, description } = request.body;
+        const { name, description } = request.body;
+        const requrestImage = request.file;
+        const image = requrestImage.filename;
 
         const service = new CreateMangaService();
         

@@ -4,7 +4,8 @@ import { CreateChapterService } from "../services/CreateChapterService";
 
 export class CreateChapterController {
     async handlle(req: Request, res: Response) {
-        const { numberChapter, description, mangaID} = req.body;
+        const { numberChapter, description} = req.body;
+        const { mangaID } = req.params;
         
         const service = new CreateChapterService();
         

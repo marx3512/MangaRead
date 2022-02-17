@@ -1,19 +1,21 @@
 import { Request, Response } from "express";
+import { getRepository } from "typeorm";
+import { Chapter } from "../entities/Chapter";
+import { Page } from "../entities/Page";
 import { CreatePageService } from "../services/CreatePageService";
 
 
 export class CreatePageController {
     async handle(req: Request, res: Response) {
-        const { image, chapterID} = req.body;
+        const requestimage = req.files as Express.Multer.File[];
+        const { chapterID } = req.params;
 
-        const service = new CreatePageService();
+        const images = requestimage.map(image => {
+            return { image: image.filename }
+        })
+        
+        const service = new CreatePageService().execute({images,chapterID});
 
-        const result = await service.execute({image, chapterID});
-
-        if(result instanceof Error) {
-            return res.status(400).json(result.message);
-        }
-
-        return res.json(result);
+        return res.json(service);
     }
 }
