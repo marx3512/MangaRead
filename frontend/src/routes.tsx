@@ -1,16 +1,22 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Landing from "./pages/Landing";
 import RegisterManga from "./pages/RegisterManga";
+import MangaPage from "./pages/MangaPage";
+import ChapterPage from "./pages/ChapterPage";
 
-function Routes() {
+function Routess() {
     return (
         <BrowserRouter>
-            <Route element={<Landing />}  path="/"  />
-            <Route element={<RegisterManga />}  path="/registermanga"  />
+            <Routes>
+                <Route path="/" element={<Landing />} />
+                <Route path="/registermanga" element={<RegisterManga />} />
+                <Route path="/mangapage" element={<MangaPage />} />
+                <Route path="/chapterpage" element={<ChapterPage />} />
+            </Routes>
         </BrowserRouter>
     )
 }
 
-export default Routes;
+export default Routess;

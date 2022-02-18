@@ -1,11 +1,11 @@
 import React from 'react';
 import "./styles/global.css";
 
-import Routes from "./routes";
+import Routess from "./routes";
 
 function App() {
   return (
-    <Routes />
+    <Routess />
   );
 }
 
