@@ -1,19 +1,19 @@
-#tittle-manga-register {
+#tittle-register-chapter {
     grid-column: 2 / 3;
     justify-self: center;
     color: #F4FFE0;
     text-shadow: 1px 4px 4px #000000;
     font-size: 72px;
     line-height: 107px;
-}  
+}
 
-#register-manga {
+#register-chapter-page {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 300px;
 }
 
-#forms-manga {
+#forms-chapter {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     
@@ -22,16 +22,16 @@
     align-items: center;
 }
 
-#input-manga-register {
+#input-chapter-register {
     width: 80%;
     font-family: Rubik, sans-serif;
 }
 
-#input-manga-description {
+#input-chapter-description {
     padding-bottom: 50px;
 }
 
-#link-manga-register {
+#link-chapter-register {
     text-decoration: none;
     color: white;
     justify-self: center;
@@ -41,4 +41,3 @@
     border-radius: 0px 25px 25px 25px;
     background-color: #2b2b2b;
 }
-

@@ -1,6 +1,6 @@
 import { getRepository } from "typeorm";
 import { Manga } from "../entities/Manga";
-
+import mangaView from "../views/mangaViews";
 
 
 export class GetAllMangaService {
@@ -13,6 +13,6 @@ export class GetAllMangaService {
             return new Error("Not manga exist")
         }
 
-        return mangas;
+        return mangaView.renderMany(mangas);
     }
 }
